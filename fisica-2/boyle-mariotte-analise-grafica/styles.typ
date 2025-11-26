@@ -71,6 +71,8 @@
     #set align(center)
     #text(fill: primary-color, weight: "semibold", size: 10pt)[*#title*]
     
+    #set align(left)
+    #set par(first-line-indent: (amount: 0em))
     #content
   ]
 }
