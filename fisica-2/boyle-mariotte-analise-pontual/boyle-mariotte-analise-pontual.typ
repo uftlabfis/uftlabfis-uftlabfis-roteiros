@@ -1,7 +1,7 @@
 #import "styles.typ": *
 
 #show: setup.with(
-  title: [Lei de Boyle-Mariotte - Análise gráfica],
+  title: [Lei de Boyle-Mariotte - Análise pontual],
   author: [Laboratório de Ensino de Física],
   abbr: [Labfis],
   url: [https://github.com/uftlabfis/uftlabfis]
@@ -62,14 +62,10 @@ Observe que a Lei de Boyle-Mariotte é um caso especial da Lei dos Gases Ideais 
     cetz.canvas({
       import cetz.draw: *
 
-      plot.plot(..opts, x-label: [$V$], y-label: [$p$], name:"plot", {
+      plot.plot(..opts, x-label: [$V$], y-label: [$p$], {
         plot.add(domain: (0.9, 6.5), v => 6/v, style: (stroke: 1.5pt+primary-color))
         plot.add(data-a, style: (stroke: none), mark: "o", mark-size: 0.14, mark-style: (fill: primary-color.mix(white), stroke: primary-color))
-        plot.add-anchor("pt-1", (2, 3))
-        plot.add-anchor("pt-2", (3, 4))
       })
-      line("plot.pt-1", "plot.pt-2", mark: (start: "stealth", fill: black), name: "line")
-      content("line.end", [isoterma], anchor: "south-west", padding: 0.05)
     })
   ), <fig:boyle-mariotte-a>,
   figure(
