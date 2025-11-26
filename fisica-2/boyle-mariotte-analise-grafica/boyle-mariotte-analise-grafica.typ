@@ -27,7 +27,7 @@ $<eq:lei-dos-gases>
 
 == Lei de Boyle-Mariotte (Transformação isotérmica)
 
-Quando uma quantidade fixa de gás ideal é mantida a *temperatura constante*, sua pressão varia inversamente com o volume. Essa relação, descoberta por Boyle e Mariotte no século XVII, é conhecida como *Lei de Boyle-Mariotte*, caracterizando uma *transformação isotérmica*.
+Quando uma quantidade fixa de gás ideal é mantida a *temperatura constante*, sua pressão varia inversamente com o volume. Essa relação, descoberta por Boyle e Mariotte no século XVII, é conhecida como *Lei de Boyle-Mariotte*, caracterizando uma *transformação isotérmica* @Halliday2.
 
 //Quando uma certa quantidade de um gás ideal está confinado em um recipiente fechado e submetido a uma temperatura constante, percebe-se da relação dos gases ideais acima que a pressão do gás varia com o inverso do volume ocupado. Tal fato foi primeiramente observado por Robert Boyle e Edme Mariotte no século XVII. A lei enunciada pelos cientistas recebeu o nome de Lei de Boyle- Mariotte. Lembrando que é caracterizada por ocorrer à temperatura constante, o processo descrito pela *Lei de Boyle-Mariotte* é chamado de *transformação isotérmica*:
 
@@ -95,7 +95,7 @@ $<eq:boyle-mariotte>
   mostrando que $p$ é _linearmente proporcional_ a $1\/V$. 
 ]
 
-Nesse caso, a constante $k = n R T$ na @eq:boyle-mariotte caracteriza a Lei de Boyle-Mariotte. Assim, o gráfico $p times 1\/V$, mostrado na @fig:boyle-mariotte-b é uma reta, com coeficiente linear nulo e coeficiente angular $k = n R T$. 
+Nesse caso, a constante $k = n R T$ na @eq:boyle-mariotte caracteriza a Lei de Boyle-Mariotte. Assim, o gráfico $p times 1\/V$, mostrado na @fig:boyle-mariotte-b é uma reta, com coeficiente linear nulo e coeficiente angular $k$. 
 
 
 #section([= Objetivos])
@@ -115,12 +115,12 @@ Nesse caso, a constante $k = n R T$ na @eq:boyle-mariotte caracteriza a Lei de B
 - Equipamento de Boyle-Mariotte;
 - Termômetro.
 
-Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado de um *manômetro diferencial* (1), uma válvula de descarga (2), um êmbolo (3), uma câmara de gás
+Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado de um *manômetro* (1), uma válvula de descarga (2), um êmbolo (3), uma câmara de gás
 (4). 
 
 #info-box([Manômetro], [
 
-  O manômetro é um instrumento que mede a pressão relativa dentro da câmara de gás, denominada pressão manométrica ($p_("man")$) e definida como a diferença entre a pressão absoluta ($p$) dentro da câmara e a pressão atmosférica local ($p_("atm")$), tal que:
+  O manômetro é um instrumento que mede a pressão relativa dentro da câmara de gás e a pressão externa (pressão atmosfética). A pressão manométrica ($p_("man")$) é definida como a diferença entre a pressão absoluta ($p$) dentro da câmara e a pressão atmosférica local ($p_("atm")$), tal que:
 
   #nonum($ p = p_("atm") + p_("man") $)
 
@@ -150,21 +150,21 @@ Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado d
 
 
 
-+ Abra a válvula de descarga.
-+ Gire a manopla do êmbolo até a posição $L = 20$ cm.
++ Abra a válvula de descarga e gire a manopla do êmbolo até a posição $L = 20$ cm.
 
   #info-box([Câmara de gás], [
-    A Câmara de gás está graduada em centímetros e possui raio interno $R = 1,6$ cm. Assim, para encontrar o volume ocupado pelo gás, deve-se multiplicar a posição $L$ do êmbolo pela área de seção transversal $S = pi R^2$:
+    A Câmara de gás está graduada em centímetros e possui raio interno $R = 1,6$ cm. Assim, para encontrar o volume ocupado pelo gás, deve-se multiplicar a posição  $L$ do êmbolo pela área de seção transversal $S = pi R^2$:
 
     #nonum($ V = L times pi R^2. $)
 
-    Por exemplo, para a posição inicial $L = 20$ cm, temos:
+    Por exemplo, para a posição inicial $L = 20$ cm, temos que o volume de gás inicialmente presente na câmara de gás é:
 
     #nonum($
       V = 20 times (pi 1,6^2) approx 161 " cm"^3 =  1,61 times 10^(-4) " m"^3        
     $)
 
-    Considerando o volume calculado acima e os valores típicos para a densidade do ar ($rho_("ar")$) e massa molar do ar ($M_("ar")$) a 20 °C, podemos determinar o número de mols ($n$) confinados na câmara de gás:
+    
+    Considerando o volume calculado acima e os valores típicos para a densidade do ar ($rho_("ar")$) e massa molar do ar ($M_("ar")$) a 20 °C, podemos determinar o número de mols ($n$) confinados na câmara de gás no momento em que a válvula de descarga é fechada:
 
     #set text(size: 9.5pt)
     #nonum($
@@ -174,8 +174,10 @@ Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado d
       ) \
 
       n = display((m_("ar"))/(M_("ar"))) = display((rho_("ar") times V)/(M_("ar"))) = display((1\,204 times (1,61 times 10^(-4)))/(2\,896 times 10^(-2))) \
-        n = 6\,68 times 10^(-5) " mol"         
+        n approx 6\,7 times 10^(-3) " mol"         
     $)
+
+    A quantidade de mols calculada acima será utilizada como um dos parâmetros do experimento (ver @tab:parametros).
 
   ])
 
@@ -191,8 +193,8 @@ Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado d
       columns: (0.8fr, 1fr, 1fr),
       table.header([Número\ de mols], table.cell(colspan: 2)[Temperatura\ ambiente]),
 
-      [#nonum($n " (mols)"$)], [#nonum($ t_c "(°C)" $)], [#nonum($ T "(K)"\ T  = t_c + 273 $)],
-      [$6,68 times 10^(-5)$], [], []
+      [#nonum($n " (mol)"$)], [#nonum($ t_c "(°C)" $)], [#nonum($ T "(K)"\ T  = t_c + 273 $)],
+      [$6,7 times 10^(-3)$], [], []
     )
   ]<tab:parametros>
 
@@ -247,7 +249,7 @@ Conforme ilustrado na @fig:equipamento-boyle-mariotte, o equipamento é dotado d
   bottom,
   float: true,
   scope: "parent", 
-  clearance: 1em
+  clearance: 1.5em
 )[
   #figure(
     kind: table,
