@@ -152,10 +152,10 @@ Neste experimento, o ar (tratado como um gás ideal) será submetido a uma *tran
 
 
 
-#section([= Análise de Dados])
+#section([= Análise de Resultados])
 
 
-+ Compare o valor do produto $P V$ obtidos para os dois estados do gás. 
++ Compare o valor do produto $P V$ obtido para cada um dos estados do gás. 
 
 + Calcule erro percentual para o produto $P V$, conforme @eq-desvio-perc.
 
