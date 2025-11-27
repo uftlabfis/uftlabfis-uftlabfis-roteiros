@@ -57,6 +57,10 @@
   } 
 }
 
+// Remove a numeração automática de equações
+#let nonum(eq) = math.equation(block: true, numbering: none, eq)
+
+
 // 📦 Caixa de destaque (ex: definições)
 #let info-box(title, content) = {
   set text(size: 10pt)
