@@ -179,18 +179,19 @@ $<eq-desvio-perc>
 
 + O resistor utilizado é um Resistor Ôhmico, ou seja, respeita a Lei de Ohm? Discuta os resultados.
 
-#figure(
-  kind: table,
-  caption: [Análise de Resultados]
-)[
-  #table(
-    columns: (1fr, 1fr, 0.8fr),
-    table.header([$R_("esp") (Omega)$], [$R_("exp") (Omega)$], [$Delta "Erro" (%)$]),
-    [$$]
-  )
-]<tab:resultados>
+  #figure(
+    kind: table,
+    caption: [Análise de Resultados]
+  )[
+    #table(
+      columns: (1fr, 1fr, 0.8fr),
+      table.header([$R_("esp") (Omega)$], [$R_("exp") (Omega)$], [$Delta "Erro" (%)$]),
+      [$$]
+    )
+  ]<tab:resultados>
 
 #set heading(numbering: none)
 #section([= Referências])
 
 #bibliography("assets/references/references.bib", style: "assets/references/abnt.csl", title:"")
+

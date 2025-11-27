@@ -1,5 +1,6 @@
 // Bibliotecas importadas
-#import "@preview/cetz:0.4.0" // Desenho vetorial
+#import "@preview/cetz:0.4.2" // Desenho vetorial
+#import "@preview/cetz-plot:0.1.3": plot, chart
 #import "@preview/subpar:0.2.2" //Subfiguras
 
 // 🎨 Definição de Cores
@@ -122,7 +123,7 @@
     }
   )
   // ✍️ Estilo de texto e parágrafo
-  set text(lang: "pt", size: 12pt,  font: "Arial")
+  set text(lang: "pt", size: 12pt,  font: "Times New Roman")
 
   set par(
     first-line-indent: (
