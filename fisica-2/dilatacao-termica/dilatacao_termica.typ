@@ -10,7 +10,7 @@
 #section([= Introdução])
 
 
-A temperatura de um corpo está associada ao estado de agitação térmica de suas moléculas. Quando ocorre variação de temperatura de um corpo, a distância média entre as moléculas também varia, fazendo com que o corpo apresente alteração em suas dimensões. Esse fenômeno é denominado *dilatação térmica* @Halliday2.
+A temperatura de um corpo está associada ao grau de agitação térmica de suas moléculas. , fazendo com que o corpo apresente alteração em suas dimensões. Esse fenômeno é denominado *dilatação térmica* @Halliday2.
 
 O fenômeno físico da dilatação tem várias aplicações práticas. Em pontes e ferrovias, utilizam-se juntas de dilatação — pequenas folgas que evitam trincas e rupturas causadas pela variação de temperatura. Já os fios elétricos não são instalados totalmente esticados, pois precisam de folga para suportar a contração em dias frios.
 
