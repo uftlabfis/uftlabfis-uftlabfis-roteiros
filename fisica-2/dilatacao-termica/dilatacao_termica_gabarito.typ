@@ -115,7 +115,8 @@ $<eq:dilatacao-linear>
   Considere, por exemplo, que após estabilização do ponteiro do relógio comparador, este encontre-se na posição $85$, conforme figura acima. Lembrando que cada divisão do relógio comparador equivale a $0,01$ mm, então a dilatação $Delta L$ sofrida será:
   
     #nonum($ Delta L = 85 times 0,01 "mm"$) 
-    #nonum($ Delta L = 0,85 "mm"$)
+    #nonum($ Delta L = 0,85  "mm"$)
+
   
 ])
 
@@ -169,6 +170,8 @@ $<eq:dilatacao-linear>
 )
 
 
+
+
 #place(
   bottom,
   float: true,
@@ -182,9 +185,9 @@ $<eq:dilatacao-linear>
     #table(
       columns: (0.6fr, 1fr, 1fr, 1fr, 1fr, 1fr),
       table.header([Corpo de prova], [$L_0$ (mm)], [$theta_0$ (°C)], [$theta$ (°C)], [$Delta theta$ (°C)], [$Delta L$ (mm)]),
-      [$1$], [400], [], [], [], [],
-      [$2$], [400], [], [], [], [],
-      [$3$], [400], [], [], [], [],
+      [$1$], [400], [#text(fill: red)[$19$]], [#text(fill: red)[$97$]], [#text(fill: red)[$78$]], [#text(fill: red)[$0,37$]],
+      [$2$], [400], [#text(fill: red)[$19$]], [#text(fill: red)[$97$]], [#text(fill: red)[$78$]], [#text(fill: red)[$0,53$]],
+      [$3$], [400], [#text(fill: red)[$20$]], [#text(fill: red)[$97$]], [#text(fill: red)[$77$]], [#text(fill: red)[$0,66$]],
       //table.cell(colspan: 2)[*Média*]
     )
   ]<tab:dados>
@@ -203,9 +206,9 @@ $<eq:dilatacao-linear>
   #table(
     columns: (0.5fr, 1fr, 1fr, 1fr, 1fr),
     table.header([Corpo de prova], [$alpha_("exp")$ (°C$""^(-1)$)], [$alpha_("teo")$ (°C$""^(-1)$)], [$Delta "Erro"$ (%)], [Material]),
-    [$1$], [], [], [], [],
-    [$2$], [], [], [], [],
-    [$3$], [], [], [], [],
+    [$1$], [#text(fill: red)[$1,19 times 10^(-5)$]], [#text(fill: red)[$1,2 times 10^(-5)$]], [#text(fill: red)[$1,2%$]], [#text(fill: red)[Ferro]],
+    [$2$], [#text(fill: red)[$1,70 times 10^(-5)$]], [#text(fill: red)[$1,7 times 10^(-5)$]], [#text(fill: red)[$0,08%$]], [#text(fill: red)[Cobre]],
+    [$3$], [#text(fill: red)[$2,14 times 10^(-5)$]], [#text(fill: red)[$2,3 times 10^(-5)$]], [#text(fill: red)[$6,8%$]], [#text(fill: red)[Alumínio]], 
   )
 ]<tab:resultados>
 ]
