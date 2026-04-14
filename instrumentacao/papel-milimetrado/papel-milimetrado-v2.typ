@@ -260,12 +260,12 @@ $
   $
       P_1 &= (x1, y1) &arrow.double 
       &cases(
-        t_1 = x1 times #str(ex).replace(".", ",") &= #str(calc.round(1000*t1)/1000).replace(".", ",")\
+        t_1  = x1 times #str(ex).replace(".", ",") &= #str(calc.round(1000*t1)/1000).replace(".", ","),
         s_1 = y1 times #str(ey).replace(".", ",") &= #str(calc.round(1000*s1)/1000).replace(".", ",")
       )\
       P_2 &= (x2, y2) &arrow.double 
       &cases(
-        t_2 = x2 times #str(ex).replace(".", ",") &= #str(calc.round(1000*t2)/1000).replace(".", ",")\
+        t_2 = x2 times #str(ex).replace(".", ",") &= #str(calc.round(1000*t2)/1000).replace(".", ","),
         s_2 = y2 times #str(ey).replace(".", ",") &= #str(calc.round(1000*s2)/1000).replace(".", ",")
       )\
   $
