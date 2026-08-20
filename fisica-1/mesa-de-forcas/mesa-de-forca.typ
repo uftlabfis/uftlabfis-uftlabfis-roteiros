@@ -24,26 +24,44 @@ A força é uma grandeza vetorial, ou seja, além de possuir intensidade, també
   caption: [Sistema de Forças em equilíbrio estático],
   cetz.canvas({
     import cetz.draw: *
+
+    //Transferidor
+    circle((0, 0), radius: 3.5, stroke: uft-gray+0.8pt)
+    //line((0, -2.7), (0, 2.7), stroke: (dash: "dashed", paint: uft-gray))
+    for i in range(0, 360, step: 5) {
+      let th = 1deg * i
+      if th==0deg or th==180deg {
+        line((3*calc.cos(th), 3*calc.sin(th)), (3.4*calc.cos(th), 3.4*calc.sin(th)), stroke: uft-gray+0.8pt)
+        content((3.8*calc.cos(th), 3.8*calc.sin(th)), [#text(uft-gray)[$0°$]])
+      } else if th==90deg or th==270deg {
+        line((3*calc.cos(th), 3*calc.sin(th)), (3.4*calc.cos(th), 3.4*calc.sin(th)), stroke: uft-gray+0.8pt)
+        content((3.8*calc.cos(th), 3.8*calc.sin(th)), [#text(uft-gray)[$90°$]])
+      } else {
+        line((3.2*calc.cos(th), 3.2*calc.sin(th)), (3.4*calc.cos(th), 3.4*calc.sin(th)), stroke: uft-gray+0.8pt)
+      }
+    }
+
+
     // Força F1
     line((0, 0), (F1),
       mark: (end: "stealth", fill: black), name: "F1"
     )
-    content("F1.end", [$F_1$], anchor: "south-east")
+    content("F1.end", [$arrow(F_1)$], anchor: "south-east")
     // Força F2
     line((0,0), (F2),
       mark: (end: "stealth", fill: black), name: "F2"
     )
-    content("F2.end", [$F_2$], anchor: "north-east")
+    content("F2.end", [$arrow(F_2)$], anchor: "north-east")
     // Força F3
     line((0,0), (F3),
       mark: (end: "stealth", fill: black), name: "F3"  
     )
-    content("F3.end", [$F_3$], anchor: "east")
+    content("F3.end", [$arrow(F_3)$], anchor: "east")
     // Força Fr
     line((0,0), (Fr),
       mark: (end: "stealth", fill: black), name: "Fr"  
     )
-    content("Fr.end", [$F_r$], anchor: "west")
+    content("Fr.end", [$arrow(F_r)$], anchor: "west")
     // Paralelogramo
     line(
       (F1), (Fr), (F2), stroke: (dash: "dashed", thickness: 0.5pt)
@@ -61,7 +79,7 @@ $
   F_r = sqrt(F_1^2 + F_2^2 + 2 F_1 F_2 cos theta)
 $<eq-paralelogramo>
 
-Para que o sistema esteja em equilíbrio, é necessário aplicar uma terceira força $F_3$, de mesmo módulo que a resultante $F_r$, porém de sentido oposto: $F_3 = -F_r$.
+Para que o sistema esteja em equilíbrio, é necessário aplicar uma terceira força $F_3$, de mesmo módulo que a resultante $F_r$, porém de sentido oposto: $arrow(F_3) = -arrow(F_r)$.
 
 Esse princípio tem diversas aplicações práticas, como no cálculo de forças em cabos de pontes e estruturas, na análise de forças que atuam sobre um corpo suspenso por fios em diferentes direções, e no equilíbrio de objetos submetidos a tensões em máquinas simples. 
 
@@ -102,7 +120,8 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
 #section([= Procedimentos])
 
 #info-box([Atenção], [
-  Cada suporte tem massa de 5 gramas.
+  - Cada suporte tem massa de 5 gramas.
+  - Para simplificação dos cálculos, utilizaremos o grama-força (gf) como unidade de força para medida das tensões nos fios. _Lembre-se_: 1 grama-força (1gf) é a força peso de uma massa de 1 grama (1 g).
 ])
 
 //#section([== Primeira Parte])
@@ -118,7 +137,6 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
 + Fixe uma das polias na marcação de 0º no transferidor da mesa de forças. A massa acoplada, que corresponderá à massa $m_3$, e a posição dessa polia não serão alteradas durante a execução do experimento.
 + Por tentativa e erro, ajuste posição das outras duas polias (para $m_1$ e $m_2$) de modo que o sistema fique em equilíbrio (O sistema estará em equilíbrio quando o disco transparente ficar centralizado em relação à mesa de força, conforme @fig-mesa-b.).
 + Anote o ângulo $theta$ formado pelos fios ligados às massas $m_1$ e $m_2$ no campo correspondente da @tab-dados.
-+ Utilizando o valor da aceleração da gravidade $g = 9,8 "m/s"^2$, calcule o valor das forças $F_1$, $F_2$ e $F_3$ correspondentes aos pesos das massas $m_1$, $m_2$ e $m_3$, respectivamente. Anote os resultados na @tab-dados.
 + Aplique a @eq-paralelogramo e determine a Força resultante $F_r$ esperada que equilibraria as forças $F_1$ e $F_2$ com um ângulo $theta$.
 + Represente as forças $F_1$, $F_2$ e $F_3$ no diagrama apropriado do #text(fill: primary-color)[Anexo - Análise Gráfica]. Use a regra do paralelogramo para determinar graficamente a força $F_r$.
 + Repita os passos acima para os ternos de massas $m_1$, $m_2$ e $m_3$ na @tab-dados.
@@ -128,11 +146,11 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
   caption: [Coleta e análise de dados],
 )[
   #table(
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    table.header([$m_1$ (g)], [$m_2$ (g)], [$m_3$ (g)], [$F_1$ (N)], [$F_2$ (N)], [$F_3$ (N)], [$theta (°)$], [$F_r$ (N)], [$E (%)$]),
-    [40], [40], [40], [], [], [], [], [], [],
-    [35], [35], [40], [], [], [], [], [], [],
-    [25], [35], [40], [], [], [], [], [], [],
+    columns: (1fr, 1fr, 1fr, 2fr, 2fr, 2fr),
+    table.header([$F_1$ (gf)], [$F_2$ (gf)], [$F_3$ (gf)], [$theta (°)$], [$F_r$ (gf)], [$E (%)$]),
+    [40], [40], [40], [], [], [],
+    [35], [35], [40], [], [], [],
+    [25], [35], [40], [], [], [],
   )
 ]<tab-dados>
 
@@ -140,7 +158,6 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
 #section([= Análise de Dados])
 
 #info-box([Atenção], [
-  Nesta seção, consideraremos os valores calculados da força $F_r$ como _valores esperados_ para a força resultante da soma $F_1 + F_2$. Em contrapartida, os valores medidos $F_3$ serão nossos _valores experimentais_.
 
   Vamos avaliar a qualidade do experimento por meio do cálculo do erro percentual:
   $
@@ -151,7 +168,7 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
 #set enum(start: 1)
 + Usando a @eq-erro, calcule o erro percentual $"E (%)"$ na determinação da força resultante de cada distribuição de massas. Anote o resultado na coluna correspondente da @tab-dados.
 
-+ A análise gráfica permite concluir que a relação $F_3 = -F_r$ é verdadeira? Explique as causas de possíveis erros.
++ A análise gráfica permite concluir que a relação $arrow(F_3) = -arrow(F_r)$ é verdadeira? Explique as causas de possíveis erros.
 
 #set heading(numbering: none)
 #section([= Referências])
@@ -172,7 +189,7 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
   ]
 ]
 
-#let transferifor = {
+#let transferidor = {
   cetz.canvas({
     import cetz.draw: *
     let raio = 6.4cm
@@ -258,7 +275,7 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
   show table.cell.where(y: 0): strong
   table(
     columns: (1fr, 1fr, 1fr),
-    table.header([$m_1$ (g)], [$m_2$ (g)], [$m_3$ (g)]),
+    table.header([$F_1$ (gf)], [$F_2$ (gf)], [$F_3$ (gf)]),
     [#f1], [#f2], [#f3]
   )
 }
@@ -280,10 +297,10 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
     #header(35, 35, 40)
   ],
   [
-    #transferifor
+    #transferidor
   ],
   [
-    #transferifor
+    #transferidor
   ]
 )
 
@@ -296,7 +313,7 @@ O experimento da mesa de forças, ilustrada na @fig-mesa permite compreender de 
     #header(25, 35, 40)
   ], [],
   [
-    #transferifor
+    #transferidor
   ],
   []
 )

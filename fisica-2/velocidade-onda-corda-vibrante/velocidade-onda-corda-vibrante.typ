@@ -102,33 +102,10 @@ Neste experimento, ondas estacionárias são geradas em uma corda esticada,por m
 
 //#info-box([Atenção], [Conteúdo])
 
-#section([== Primeira Parte: Velocidade de onda em função da tensão $F$ e da massa específica $mu$])
-
-#figure(
-  kind: table,
-  caption: [Coleta de dados da primeira parte],
-)[
-  #table(
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    table.header([$m$\ (kg)], [$l$\ (m)], [$M$\ (kg)], [$mu$\ (kg/m)], [$F$\ (N)], [$v_("esp")$\ (m/s)]),
-    [$$], [], [], [], [], []
-    //[2], [], [],
-    //table.cell(colspan: 2)[*Média*]
-  )
-]<tab:dados-1>
-
-
-+ Com a balança digital, determine a massa $m$ do fio e com a trena, meça o respectivocomprimento $l$. Calcule a massa específica $mu$ da corda.
-
-+ Com a balança digital, determine a massa suspensa pela polia $M$. 
-
-+ Calcule a tensão $F = M\g$ à qual a corda está submetida.
-
-+ Utilize a @eq:vel-tensao-mu para calcular o valor esperado da velocidade ($v_("esp")$) de propagação da onda na corda.
 
 
 
-#section([== Segunta Parte: Velocidade de onda na corda vibrante])
+#section([== Primeira Parte: Velocidade de onda na corda vibrante])
 
 #figure(
   kind: table,
@@ -173,6 +150,30 @@ Neste experimento, ondas estacionárias são geradas em uma corda esticada,por m
 
 + Utilize a @eq:vel-lambda-f para calcular a velocidade de onda observada ($v_("obs")$).
 
+
+#section([== Segunda Parte: Velocidade de onda em função da tensão $F$ e da massa específica $mu$])
+
+#figure(
+  kind: table,
+  caption: [Coleta de dados da primeira parte],
+)[
+  #table(
+    columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    table.header([$m$\ (kg)], [$l$\ (m)], [$M$\ (kg)], [$mu$\ (kg/m)], [$F$\ (N)], [$v_("esp")$\ (m/s)]),
+    [$$], [], [], [], [], []
+    //[2], [], [],
+    //table.cell(colspan: 2)[*Média*]
+  )
+]<tab:dados-1>
+
+
++ Com a balança digital, determine a massa $m$ do fio e com a trena, meça o respectivo comprimento $l$. Calcule a massa específica $mu$ da corda.
+
++ Com a balança digital, determine a massa suspensa pela polia $M$. 
+
++ Calcule a tensão $F = M\g$ à qual a corda está submetida.
+
++ Utilize a @eq:vel-tensao-mu para calcular o valor esperado da velocidade ($v_("esp")$) de propagação da onda na corda.
 
 
 
