@@ -24,6 +24,8 @@ Conforme #cite(<example-book>, form: "prose"), ...
 
 #lorem(20)
 
+#page
+
 $
   E = rho_f g V  
 $<eq-empuxo>
